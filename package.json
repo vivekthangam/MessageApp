@@ -1,12 +1,12 @@
 {
-    "name": "contact-mg-web",
+    "name": "message-app",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
     "scripts": {
         "start": "node server/server.js",
         "dev": "nodemon server/server.js",
-        "build": "npm install && cd client/contact-mg-web && npm install && npm run build"
+        "build": "npm install && cd client/message-app && npm install && npm run build"
     },
     "keywords": [],
     "author": "",

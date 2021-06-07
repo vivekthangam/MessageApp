@@ -14,19 +14,6 @@ const userSchema = moongoose.Schema({
 });
 
 
-userSchema.pre("remove", async function(next) {
-    console.log(this.model("Contact"))
-    await this.model("Contact").deleteMany({ user_id: this._id })
-    next()
-})
-
-userSchema.virtual('Contacts', {
-    ref: 'Contact',
-    localField: "_id",
-    foreignField: "user_id",
-    justOne: false
-})
-
 userSchema.pre('save', function(next) {
     const user = this;
     if (this.isModified("password") && this.isNew) {
@@ -39,7 +26,6 @@ userSchema.pre('save', function(next) {
                     if (hasherror) return next(hasherror)
                     else
                         user.password = hash;
-                    console.log(user.passowrd)
                     next();
                 });
             }
