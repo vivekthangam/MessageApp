@@ -16,7 +16,7 @@ createRoutes(app);
 app.use(errorhandler);
 
 // Have Node serve the files for our built React app
-app.use(express.static(path.resolve(__dirname, '../client/contact-mg-web/build')));
+app.use(express.static(path.resolve(__dirname, '../client/message-app/build')));
 
 // Handle GET requests to /api route
 app.get("/api", (req, res) => {
